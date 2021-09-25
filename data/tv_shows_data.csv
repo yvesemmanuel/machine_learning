@@ -1,0 +1,642 @@
+Title,Genre,Premiere,No_of_Seasons,No_of_Episodes
+Stranger Things,Science Fiction Horror,"July 15, 2016",3,25
+The Crown,Historical Drama,"November 4, 2016",4,40
+Ozark,Crime Drama,"July 21, 2017",3,30
+Lost in Space,Science Fiction,"April 13, 2018",2,20
+Narcos: Mexico,Crime Drama,"November 16, 2018",2,20
+The Umbrella Academy,Superhero Action,"February 15, 2019",2,20
+Black Summer,Zombie Drama,"April 11, 2019",1,8
+Another Life,Science Fiction Drama,"July 25, 2019",1,10
+Criminal: UK,Police Procedural Anthology Series,"September 20, 2019",2,7
+Raising Dion,Superhero Science Fiction Drama,"October 4, 2019",1,9
+Virgin River,Romantic Drama,"December 6, 2019",2,20
+The Witcher,Fantasy Drama,"December 20, 2019",1,8
+Locke & Key,Horror Teen Drama,"February 7, 2020",1,10
+The Letter for the King,Fantasy,"March 20, 2020",1,6
+Outer Banks,Coming Of Age Drama,"April 15, 2020",1,10
+Sweet Magnolias,Romance Drama,"May 19, 2020",1,10
+Blood & Water,Teen Drama,"May 20, 2020",1,6
+Homemade,Anthology Series,"June 30, 2020",1,17
+Warrior Nun,Fantasy,"July 2, 2020",1,10
+Cursed,Fantasy,"July 17, 2020",1,10
+Young Wallander,Detective Drama,"September 3, 2020",1,6
+Ratched,Drama,"September 18, 2020",1,8
+The Haunting of Bly Manor,Horror,"October 9, 2020",9,unknown
+Social Distance,Anthology Series,"October 15, 2020",1,8
+Grand Army,Teen Drama,"October 16, 2020",1,9
+The Queen's Gambit,Drama,"October 23, 2020",7,unknown
+Dash & Lily,Romance,"November 10, 2020",1,8
+Selena: The Series,Biopic,"December 4, 2020",1,9
+Tiny Pretty Things,Teen Drama,"December 14, 2020",1,10
+Bridgerton,Romance,"December 25, 2020",1,8
+Fate: The Winx Saga,Teen Drama Fantasy,"January 22, 2021",1,6
+Grace and Frankie,Comedy Drama,"May 8, 2015",6,78
+Master of None,Comedy,"November 6, 2015",2,20
+Dear White People,Satire Drama,"April 28, 2017",3,30
+Atypical,Coming Of Age Comedy,"August 11, 2017",3,28
+On My Block,Coming Of Age Comedy,"March 16, 2018",3,28
+The Kominsky Method,Comedy,"November 16, 2018",2,16
+Sex Education,Comedy Drama,"January 11, 2019",2,16
+Russian Doll,Comedy,"February 1, 2019",1,8
+After Life,Comedy,"March 8, 2019",2,12
+Special,Comedy,"April 12, 2019",1,8
+I Think You Should Leave with Tim Robinson,Sketch Comedy,"April 23, 2019",1,6
+Bonding,Dark Comedy,"April 24, 2019",2,15
+Dead to Me,Black Comedy Drama,"May 3, 2019",2,20
+Malibu Rescue: The Series,Comedy,"June 3, 2019",1,8
+Mr. Iglesias,Comedy,"June 21, 2019",3,21
+Family Reunion,Comedy,"July 10, 2019",2,19
+Team Kaylie,Sitcom,"September 23, 2019",3,20
+The Politician,Comedy,"September 27, 2019",2,15
+Gentefied,Comedy Drama,"February 21, 2020",1,10
+The Iliza Shlesinger Sketch Show,Sketch Comedy,"April 1, 2020",1,6
+Brews Brothers,Comedy,"April 10, 2020",1,8
+#blackAF,Sitcom,"April 17, 2020",1,8
+Never Have I Ever,Comedy,"April 27, 2020",1,10
+Space Force,Comedy,"May 29, 2020",1,10
+The Baby-Sitters Club,Dramedy,"July 3, 2020",1,10
+Game On: A Comedy Crossover Event,Comedy,"August 10, 2020",1,4
+Julie and the Phantoms,Musical Comedy,"September 10, 2020",1,9
+The Duchess,Comedy,"September 11, 2020",1,6
+Sneakerheads,Comedy,"September 25, 2020",1,6
+Emily in Paris,Comedy Drama,"October 2, 2020",1,10
+Aunty Donna's Big Ol' House of Fun,Comedy,"November 11, 2020",1,6
+How to Ruin Christmas: The Wedding,Comedy,"December 16, 2020",1,3
+F Is for Family,Sitcom,"December 18, 2015",4,36
+Big Mouth,Coming Of Age Comedy,"September 29, 2017",4,41
+Disenchantment,Medieval Fantasy Comedy,"August 17, 2018",3,30
+Paradise PD,Comedy,"August 31, 2018",2,18
+"Love, Death & Robots",Anthology,"March 15, 2019",1,18
+Trailer Park Boys: The Animated Series,Mockumentary,"March 31, 2019",2,20
+The Midnight Gospel,Science Fantasy Dark Comedy,"April 20, 2020",1,8
+The Liberator,War Drama,"November 11, 2020",4,unknown
+Castlevania,Dark Fantasy,"July 7, 2017",3,22
+B: The Beginning,Suspense,"March 2, 2018",1,12
+Aggretsuko,Workplace Comedy,"April 20, 2018",3,30
+Ultraman,Science Fiction,"April 1, 2019",1,13
+7SEEDS,Science Fiction,"June 28, 2019",2,24
+Dino Girl Gauko,Children'S Series,"November 22, 2019",2,39
+Cagaster of an Insect Cage,Science Fiction,"February 6, 2020",1,12
+Ghost in the Shell: SAC_2045,Science Fiction,"April 23, 2020",1,12
+Japan Sinks: 2020,Disaster,"July 9, 2020",1,10
+Transformers: War for Cybertron Trilogy: Siege,Science Fiction,"July 30, 2020",6,unknown
+Dragon's Dogma,Dark Fantasy Adventure,"September 17, 2020",1,7
+Blood of Zeus,Fantasy Action,"October 27, 2020",1,8
+Transformers: War for Cybertron Trilogy: Earthrise,Science Fiction,"December 30, 2020",6,unknown
+The Hook Up Plan,Romantic Comedy,"December 7, 2018",2,15
+Family Business,Comedy,"June 28, 2019",2,12
+Mortel,Supernatural Drama,"November 21, 2019",1,6
+Vampires,Supernatural Drama,"March 20, 2020",1,6
+Into the Night,Science Fiction,"May 1, 2020",1,6
+Lupin,Drama,"January 8, 2021",1,5
+How to Sell Drugs Online (Fast),Dark Comedy,"May 31, 2019",2,12
+Biohackers,Thriller,"August 20, 2020",1,6
+The Last Word,Comedy Drama,"September 17, 2020",1,6
+Barbarians,Historical Drama,"October 23, 2020",1,6
+Over Christmas,Comedy,"November 27, 2020",3,unknown
+Delhi Crime,Police Procedural,"March 22, 2019",1,7
+Taj Mahal 1989,Romantic Comedy,"February 14, 2020",1,7
+She,Crime Drama,"March 20, 2020",1,7
+Hasmukh,Comedy,"April 17, 2020",1,10
+Betaal,Thriller,"May 24, 2020",1,4
+Masaba Masaba,Drama,"August 28, 2020",1,6
+Mismatched,Romantic Comedy,"November 20, 2020",1,6
+Bhaag Beanie Bhaag,Comedy,"December 4, 2020",1,6
+Luna Nera,Historical Drama,"January 31, 2020",1,6
+Summertime,Teen Drama,"April 29, 2020",1,8
+Curon,Supernatural Drama,"June 10, 2020",1,7
+The Naked Director,Period Drama Comedy,"August 8, 2019",1,8
+Followers,Drama,"February 27, 2020",1,9
+JU-ON: Origins,Horror,"July 3, 2020",1,6
+Alice in Borderland,Fantasy,"December 10, 2020",1,8
+Kingdom,Period Horror Thriller,"January 25, 2019",2,12
+Persona,Drama Anthology Series,"April 11, 2019",1,4
+Love Alarm,Romantic Comedy,"August 22, 2019",1,8
+Extracurricular,Teen Crime Drama,"April 29, 2020",1,10
+The School Nurse Files,Fantasy Drama,"September 25, 2020",1,6
+Sweet Home,Horror,"December 18, 2020",1,10
+Home for Christmas,Comedy Drama,"December 5, 2019",2,12
+Ragnarok,Fantasy Superhero Drama,"January 31, 2020",1,6
+Bloodride,Horror Anthology,"March 13, 2020",1,6
+Girls from Ipanema,Period Drama,"March 22, 2019",2,13
+Sintonia,Drama,"August 9, 2019",1,6
+Spectros,Thriller,"February 20, 2020",1,7
+Reality Z,Zombie Horror,"June 10, 2020",1,10
+Kissing Game,Thriller,"July 17, 2020",1,6
+"Good Morning, Verônica",Crime Drama,"October 1, 2020",1,8
+Awaiting release,Awaiting Release,Awaiting release,,unknown
+Elite,Crime Teen Drama,"October 5, 2018",3,24
+Diablero,Horror Fantasy Thriller,"December 21, 2018",2,14
+Always a Witch,Supernatural Drama,"February 1, 2019",2,18
+Monarca,Family Drama,"September 13, 2019",2,18
+Hache,Thriller,"November 1, 2019",1,8
+The Neighbor,Superhero Comedy,"December 31, 2019",1,10
+Puerta 7,Sports Crime Drama,"February 21, 2020",1,8
+Unstoppable,Comedy Drama,"February 28, 2020",1,10
+Almost Happy,Comedy,"May 1, 2020",1,10
+Valeria,Dramedy,"May 8, 2020",1,8
+The Unremarkable Juanquini,Comedy,"May 15, 2020",1,7
+Control Z,Teen Drama,"May 22, 2020",1,8
+The Search,Crime Anthology Series,"June 12, 2020",6,unknown
+Dark Desire,Thriller,"July 15, 2020",1,18
+The Great Heist,Crime Drama,"August 14, 2020",6,unknown
+Someone Has to Die,Drama,"October 16, 2020",3,unknown
+The Minions of Midas,Thriller,"November 13, 2020",6,unknown
+The Mess You Leave Behind,Drama,"December 11, 2020",8,unknown
+Daughter From Another Mother,Comedy,"January 20, 2021",1,9
+The Gift,Supernatural Drama,"December 27, 2019",2,16
+Love 101,Teen Drama,"April 24, 2020",1,8
+Ethos,Drama,"November 12, 2020",1,8
+The Victims' Game,Thriller,"April 30, 2020",1,8
+The Woods,Thriller,"June 12, 2020",6,unknown
+Love & Anarchy,Romantic Comedy,"November 4, 2020",1,8
+Paranormal,Supernatural Drama,"November 5, 2020",1,6
+Paava Kadhaigal,Anthology Series,"December 18, 2020",1,4
+Equinox,Thriller,"December 30, 2020",1,6
+Jack Whitehall: Travels with My Father,Travel Documentary,"September 22, 2017",4,15
+Somebody Feed Phil,Travel Documentary,"January 12, 2018",4,22
+Dirty Money,Documentary,"January 26, 2018",2,12
+Ugly Delicious,Travel Documentary,"February 23, 2018",2,12
+Dogs,Docu Series,"November 16, 2018",1,6
+Sunderland 'Til I Die,Sport,"December 14, 2018",2,14
+Formula 1: Drive to Survive,Sport,"March 8, 2019",2,20
+The Chef Show,Culinary Art,"June 7, 2019",2,25
+Taco Chronicles,Culinary Art,"July 12, 2019",2,13
+ARASHI's Diary -Voyage-,Docu Series,"December 31, 2019",23,unknown
+Babies,Docu Series,"February 21, 2020",2,12
+Absurd Planet,Nature Documentary,"April 22, 2020",1,12
+Trial by Media,Docu Series,"May 11, 2020",1,6
+History 101,Docu Series,"May 22, 2020",1,10
+Lenox Hill,Docu Series,"June 10, 2020",1,9
+Home Game,Docu Series,"June 26, 2020",1,8
+Down to Earth with Zac Efron,Docu Series,"July 10, 2020",1,8
+The Business of Drugs,Docu Series,"July 14, 2020",6,unknown
+Street Food: Latin America,Docu Series,"July 21, 2020",1,6
+Fear City: New York vs The Mafia,Docu Series,"July 22, 2020",3,unknown
+Connected,Docu Series,"August 2, 2020",1,6
+Immigration Nation,Docu Series,"August 3, 2020",6,unknown
+World's Most Wanted,Docu Series,"August 5, 2020",1,5
+Tiny Creatures,Nature Documentary,"August 7, 2020",1,8
+High Score,Docu Series,"August 19, 2020",6,unknown
+Chef's Table: BBQ,Culinary Art,"September 2, 2020",1,4
+The Witcher: A Look Inside the Episodes,Making Of,"September 2, 2020",1,8
+La Línea: Shadow of Narco,Docu Series,"September 9, 2020",4,unknown
+Izzy's Koala World,Docu Series,"September 15, 2020",1,8
+Challenger: The Final Flight,Docu Series,"September 16, 2020",4,unknown
+The Playbook,Docu Series,"September 22, 2020",1,5
+A Perfect Crime,Docu Series,"September 25, 2020",4,unknown
+"Whose Vote Counts, Explained",Docu Series,"September 28, 2020",3,unknown
+Song Exploder,Docu Series,"October 2, 2020",2,8
+Bad Boy Billionaires: India,Docu Series,"October 5, 2020",1,3
+Deaf U,Coming Of Age Documentary,"October 9, 2020",1,8
+Move,Docu Series,"October 23, 2020",1,5
+Carmel: Who Killed Maria Marta?,True Crime,"November 5, 2020",4,unknown
+Trial 4,Docu Series,"November 11, 2020",8,unknown
+Voices of Fire,Docu Series,"November 20, 2020",1,6
+The Holiday Movies That Made Us,Docu Series,"December 1, 2020",1,2
+Alien Worlds,Docu Series,"December 2, 2020",1,4
+Room 2806: The Accusation,Docu Series,"December 7, 2020",4,unknown
+The Surgeon's Cut,Docu Series,"December 9, 2020",1,4
+Anitta: Made In Honório,Docu Series,"December 16, 2020",1,6
+BREAK IT ALL: The History of Rock in Latin America,Docu Series,"December 16, 2020",6,unknown
+The Ripper,Docu Series,"December 16, 2020",4,unknown
+SanPa: Sins of the Savior,Docu Series,"December 30, 2020",5,unknown
+Headspace Guide to Meditation,Docu Series,"January 1, 2021",1,8
+History of Swear Words,Docu Series,"January 5, 2021",1,6
+Surviving Death,Docu Series,"January 6, 2021",1,6
+Pretend It's a City,Docu Series,"January 8, 2021",1,7
+Night Stalker: The Hunt For a Serial Killer,True Crime,"January 13, 2021",4,unknown
+Spycraft,Docu Series,"January 20, 2021",1,8
+Title,Genre,Premiere,No_of_Seasons,No_of_Episodes
+House of Cards,Political Drama,"February 1, 2013",6,73
+Hemlock Grove,Horror Thriller,"April 19, 2013",3,33
+Orange Is the New Black,Comedy Drama,"July 11, 2013",7,91
+Marco Polo,Historical Drama,"December 12, 2014",2,20
+Bloodline,Thriller,"March 20, 2015",3,33
+Daredevil,Superhero Fiction Crime Drama Legal Drama,"April 10, 2015",3,39
+Sense8,Science Fiction,"June 5, 2015",2,24
+Narcos,Crime Drama,"August 28, 2015",3,30
+Jessica Jones,Superhero Fiction Neo Noir Psychological Thriller,"November 20, 2015",3,39
+The Get Down,Musical Drama,"August 12, 2016",2,11
+Luke Cage,Superhero Fiction Neo Blaxploitation Neo Western,"September 30, 2016",2,26
+The OA,Mystery,"December 16, 2016",2,16
+A Series of Unfortunate Events,Black Comedy Mystery,"January 13, 2017",3,25
+Iron Fist,Superhero Fiction Martial Arts,"March 17, 2017",2,23
+13 Reasons Why,Teen Drama Mystery,"March 31, 2017",4,49
+Free Rein,Teen Drama,"June 22, 2017",3,30
+Gypsy,Psychological Thriller,"June 30, 2017",1,10
+Mindhunter,Crime Drama,"October 13, 2017",2,19
+Greenhouse Academy,Science Fiction Teen Drama,"September 8, 2017",4,40
+The Punisher,Superhero Fiction Crime Drama Conspiracy Thriller,"November 17, 2017",2,26
+Altered Carbon,Science Fiction,"February 2, 2018",2,18
+Seven Seconds,Crime Drama,"February 23, 2018",1,10
+The Ponysitters Club,Drama,"August 10, 2018",2,20
+The Innocents,Supernatural Fiction,"August 24, 2018",1,8
+Chilling Adventures of Sabrina,Supernatural Coming Of Age Horror,"October 26, 2018",4,36
+Tidelands,Supernatural Crime Drama,"December 14, 2018",1,8
+The Order,Supernatural Horror Drama,"March 7, 2019",2,20
+Shadow,Thriller,"March 8, 2019",1,8
+Chambers,Teen Psychological Thriller,"April 26, 2019",1,10
+The Society,Mystery Drama,"May 10, 2019",1,10
+Trinkets,Coming Of Age Drama,"June 14, 2019",2,20
+Wu Assassins,Supernatural Martial Arts Drama,"August 8, 2019",1,10
+The Dark Crystal: Age of Resistance,Fantasy,"August 30, 2019",1,10
+Dolly Parton's Heartstrings,Anthology Series,"November 22, 2019",1,8
+V Wars,Science Fiction Horror Drama,"December 5, 2019",1,10
+Soundtrack,Musical Drama,"December 18, 2019",1,10
+Messiah,Thriller,"January 1, 2020",1,10
+Spinning Out,Drama,"January 1, 2020",1,10
+October Faction,Horror,"January 23, 2020",1,10
+Queen Sono,Crime Drama,"February 28, 2020",1,6
+White Lines,Drama,"May 15, 2020",1,10
+Away,Science Fiction,"September 4, 2020",1,10
+Richie Rich,Sitcom,"February 20, 2015",2,21
+Unbreakable Kimmy Schmidt,Comedy,"March 6, 2015",4,52
+Project Mc2,Comedy,"August 7, 2015",6,26
+W/ Bob & David,Sketch Comedy,"November 13, 2015",1,5
+Love,Romantic Comedy,"February 19, 2016",3,34
+Fuller House,Sitcom,"February 26, 2016",5,75
+Flaked,Comedy,"March 11, 2016",2,14
+Netflix Presents: The Characters,Sketch Comedy,"March 11, 2016",1,8
+The Ranch,Sitcom,"April 1, 2016",8,80
+Lady Dynamite,Comedy,"May 20, 2016",2,20
+Easy,Romantic Comedy Anthology,"September 22, 2016",3,25
+Haters Back Off,Comedy,"October 14, 2016",2,16
+Trailer Park Boys Out of the Park: Europe,Mockumentary,"October 28, 2016",1,8
+One Day at a Time,Sitcom,"January 6, 2017",3,39
+Santa Clarita Diet,Comedy Horror,"February 3, 2017",3,30
+Mystery Science Theater 3000: The Return,Comic Science Fiction,"April 14, 2017",2,20
+Girlboss,Comedy,"April 21, 2017",1,13
+GLOW,Comedy,"June 23, 2017",3,30
+Friends from College,Comedy,"July 14, 2017",2,16
+Disjointed,Comedy,"August 25, 2017",2,20
+American Vandal,Mockumentary,"September 15, 2017",2,16
+She's Gotta Have It,Comedy Drama,"November 23, 2017",2,19
+Trailer Park Boys Out of the Park: USA,Mockumentary,"November 24, 2017",1,8
+Everything Sucks!,Coming Of Age Comedy,"February 16, 2018",1,10
+Alexa & Katie,Sitcom,"March 23, 2018",4,39
+All About the Washingtons,Comedy,"August 10, 2018",1,10
+Insatiable,Dark Comedy Drama,"August 10, 2018",2,22
+The Good Cop,Police Procedural Comedy Drama,"September 21, 2018",1,10
+Prince of Peoria,Sitcom,"November 16, 2018",2,16
+Turn Up Charlie,Comedy,"March 15, 2019",1,8
+Huge in France,Comedy,"April 12, 2019",1,8
+No Good Nick,Sitcom,"April 15, 2019",2,20
+Lunatics,Comedy,"April 19, 2019",1,10
+It's Bruno!,Comedy,"May 17, 2019",1,8
+Living with Yourself,Comedy Drama,"October 18, 2019",1,8
+Daybreak,Dark Comedy,"October 24, 2019",1,10
+Merry Happy Whatever,Comedy,"November 28, 2019",1,8
+Astronomy Club: The Sketch Show,Sketch Comedy,"December 6, 2019",1,6
+AJ and the Queen,Comedy,"January 10, 2020",1,10
+Medical Police,Comedy,"January 10, 2020",1,10
+The Healing Powers of Dude,Family Comedy,"January 13, 2020",1,8
+Ashley Garcia: Genius in Love,Comedy,"February 17, 2020",3,15
+I Am Not Okay with This,Coming Of Age Comedy,"February 26, 2020",1,7
+The Big Show Show,Comedy,"April 6, 2020",2,9
+Teenage Bounty Hunters,Comedy,"August 14, 2020",1,10
+Wet Hot American Summer: First Day of Camp,Satirical Comedy,"July 31, 2015",1,8
+Gilmore Girls: A Year in the Life,Family Drama,"November 25, 2016",1,4
+Wet Hot American Summer: Ten Years Later,Satirical Comedy,"August 4, 2017",1,8
+The Defenders,Superhero Action Drama,"August 18, 2017",1,8
+Godless,Western,"November 22, 2017",1,7
+Maniac,Dark Comedy,"September 21, 2018",1,10
+The Haunting of Hill House,Horror,"October 12, 2018",1,10
+Best.Worst.Weekend.Ever.,Comedy,"October 19, 2018",1,8
+What/If,Social Thriller Anthology,"May 24, 2019",1,10
+When They See Us,Drama,"May 31, 2019",1,4
+The I-Land,Science Fiction Thriller,"September 12, 2019",1,7
+Unbelievable,Drama,"September 13, 2019",1,8
+The Stranger,Thriller,"January 30, 2020",1,8
+Self Made: Inspired by the Life of Madam C. J. Walker,Biopic,"March 20, 2020",1,4
+The English Game,Historical Drama,"March 20, 2020",1,6
+Unorthodox,Drama,"March 26, 2020",1,4
+Hollywood,Drama,"May 1, 2020",1,7
+The Eddy,Musical Drama,"May 8, 2020",1,8
+BoJack Horseman,Black Comedy Drama,"August 22, 2014",6,77
+Neo Yokio,Science Fantasy Comedy,"September 22, 2017",2,7
+Super Drags,Superhero Lgbt Comedy,"November 9, 2018",1,5
+Tuca & Bertie,Comedy,"May 3, 2019",1,10
+Hoops,Sitcom Television Comedy,"August 21, 2020",1,10
+Devilman Crybaby,Supernatural Horror,"January 5, 2018",1,10
+A.I.C.O. -Incarnation-,Science Fiction,"March 9, 2018",1,12
+Sword Gai: The Animation,Supernatural,"March 23, 2018",2,24
+Lost Song,Musical Fantasy,"March 31, 2018",1,12
+Baki,Martial Arts,"June 25, 2018",2,39
+Hero Mask,Crime,"December 3, 2018",2,24
+Rilakkuma and Kaoru,Stop Motion Slice Of Life,"April 19, 2019",1,13
+Knights of the Zodiac: Saint Seiya,Action,"July 19, 2019",2,12
+Kengan Ashura,Martial Arts,"July 31, 2019",2,24
+Cannon Busters,Fantasy,"August 15, 2019",1,12
+Seis Manos,Supernatural Action,"October 3, 2019",1,8
+Levius,Science Fiction Action,"November 28, 2019",1,12
+The Disastrous Life of Saiki K.: Reawakened,Supernatural Comedy,"December 30, 2019",1,6
+The Idhun Chronicles,Fantasy Action,"September 10, 2020",2,10
+Jinn,Fantasy Adventure,"June 13, 2019",1,5
+Dollar,Thriller,"August 8, 2019",1,15
+The Rain,Post Apocalyptic Drama,"May 4, 2018",3,20
+Ares,Horror Drama,"January 17, 2020",1,8
+Marseille,Political Drama,"May 5, 2016",2,16
+Osmosis,Science Fiction Drama,"March 29, 2019",1,8
+Marianne,Horror Drama,"September 13, 2019",1,8
+Criminal: France,Police Procedural Anthology Series,"September 20, 2019",1,3
+La Révolution,Supernatural Drama,"October 16, 2020",1,8
+Dark,Science Fiction,"December 1, 2017",3,26
+Dogs of Berlin,Drama,"December 7, 2018",1,10
+Criminal: Germany,Police Procedural Anthology Series,"September 20, 2019",1,3
+Skylines,Drama,"September 27, 2019",1,6
+We Are the Wave,Drama,"November 1, 2019",1,6
+Holiday Secrets,Drama,"November 20, 2019",3,unknown
+Sacred Games,Drama,"July 6, 2018",2,16
+Ghoul,Horror,"August 24, 2018",3,unknown
+Selection Day,Drama,"December 28, 2018",1,12
+Leila,Drama,"June 14, 2019",1,6
+Typewriter,Horror,"July 19, 2019",1,5
+Bard of Blood,Espionage Thriller,"September 27, 2019",1,7
+Jamtara - Sabka Number Ayega,Crime Drama,"January 10, 2020",1,10
+Suburra: Blood on Rome,Crime Drama,"October 6, 2017",3,24
+Baby,Drama,"November 30, 2018",3,18
+Blazing Transfer Students,Action Comedy,"November 10, 2017",1,8
+Jimmy: The True Story of a True Idiot,Comedy,"July 20, 2018",1,9
+Switched,Science Fiction,"August 1, 2018",1,6
+The Forest of Love: Deep Cut,Drama,"April 30, 2020",7,unknown
+My Only Love Song,Comedy,"June 9, 2017",1,20
+YG Future Strategy Office,Comedy,"October 5, 2018",1,8
+My First First Love,Romantic Comedy,"April 18, 2019",2,16
+My Holo Love,Science Fiction Romance,"February 7, 2020",12,unknown
+Nowhere Man,Thriller,"October 31, 2019",1,8
+Triad Princess,Crime Drama Romance,"December 6, 2019",1,6
+The Ghost Bride,Mystery Drama,"January 23, 2020",1,6
+1983,Spy Thriller,"November 30, 2018",1,8
+3%,Science Fiction,"November 25, 2016",4,33
+The Mechanism,Crime Drama,"March 23, 2018",2,16
+Samantha!,Comedy,"July 6, 2018",2,14
+The Chosen One,Thriller Drama,"June 28, 2019",2,12
+Brotherhood,Crime Drama,"October 25, 2019",1,8
+Nobody's Looking,Comedy Drama,"November 22, 2019",1,8
+Omniscient,Science Fiction,"January 29, 2020",1,6
+Club de Cuervos,Comedy Drama,"August 7, 2015",4,45
+Estocolmo,Crime Drama,"November 11, 2016",1,13
+Ingobernable,Political Drama,"March 24, 2017",2,27
+Cable Girls,Period Drama,"April 28, 2017",5,42
+Edha,Drama,"March 16, 2018",1,10
+Club de Cuervos Presents: The Ballad of Hugo Sánchez,Comedy,"June 17, 2018",1,6
+The House of Flowers,Comedy,"August 10, 2018",3,33
+Wild District,Crime Drama,"October 19, 2018",2,20
+Go! Live Your Way,Musical,"February 22, 2019",2,30
+Crime Diaries: The Candidate,Crime Anthology Series,"March 22, 2019",8,unknown
+Crime Diaries: Night Out,Crime Anthology Series,"May 3, 2019",8,unknown
+High Seas,Mystery Period Drama,"May 24, 2019",3,22
+Yankee,Drama,"June 14, 2019",1,25
+Green Frontier,Crime Drama Thriller,"August 16, 2019",8,unknown
+Criminal: Spain,Police Procedural Anthology,"September 20, 2019",1,3
+The Club,Crime Drama,"November 15, 2019",1,25
+Three Days of Christmas,Drama,"December 6, 2019",3,unknown
+Quicksand,Crime Drama,"April 5, 2019",1,6
+The Stranded,Fantasy Drama,"November 14, 2019",1,7
+The Protector,Supernatural Mystery,"December 14, 2018",4,32
+Chef's Table,Culinary Art,"April 26, 2015",6,30
+Making a Murderer,Crime Drama,"December 18, 2015",2,20
+Chelsea Does,Comedy,"January 23, 2016",1,4
+Cooked,Culinary Art,"February 19, 2016",4,unknown
+Last Chance U,Sport,"July 29, 2016",5,38
+Fearless,Sport,"August 19, 2016",6,unknown
+Chef's Table: France,Culinary Art,"September 2, 2016",1,4
+Roman Empire,Historical Drama,"November 11, 2016",3,15
+Captive,Documentary,"December 9, 2016",8,unknown
+Abstract: The Art of Design,Biography,"February 10, 2017",2,14
+QB1: Beyond the Lights,Sport,"February 13, 2017",3,30
+Five Came Back,Historical Drama,"March 31, 2017",3,unknown
+Hot Girls Wanted: Turned On,Documentary,"April 21, 2017",6,unknown
+The Keepers,Crime Drama,"May 19, 2017",7,unknown
+Daughters of Destiny,Documentary,"July 28, 2017",4,unknown
+Fire Chasers,Documentary,"September 8, 2017",4,unknown
+The Confession Tapes,True Crime,"September 8, 2017",2,11
+The Day I Met El Chapo,Biography,"October 20, 2017",1,3
+Shot in the Dark,True Crime,"November 17, 2017",1,8
+Wormwood,Psychological Drama,"December 15, 2017",6,unknown
+72 Dangerous Animals: Latin America,Nature,"December 22, 2017",1,12
+Dope,Documentary,"December 22, 2017",3,12
+The Toys That Made Us,Documentary,"December 22, 2017",3,12
+Rotten,Documentary,"January 5, 2018",2,12
+Drug Lords,Documentary,"January 19, 2018",2,8
+Coach Snoop,Sport,"February 2, 2018",1,8
+First Team: Juventus,Sport,"February 16, 2018",1,6
+Flint Town,Documentary,"March 2, 2018",8,unknown
+Girls Incarcerated,Documentary,"March 2, 2018",2,16
+Wild Wild Country,Documentary,"March 16, 2018",6,unknown
+Rapture,Documentary,"March 30, 2018",1,8
+Bobby Kennedy for President,History,"April 27, 2018",4,unknown
+Evil Genius: The True Story of America's Most Diabolical Bank Heist,True Crime,"May 11, 2018",4,unknown
+Explained,Docu Series,"May 23, 2018",2,30
+November 13: Attack on Paris,Documentary,"June 1, 2018",3,unknown
+Dark Tourist,Travel Documentary,"July 20, 2018",1,8
+Marching Orders,Docu Series,"August 3, 2018",1,12
+72 Dangerous Animals: Asia,Nature,"August 10, 2018",1,12
+Afflicted,Docu Series,"August 10, 2018",1,7
+Follow This,Docu Series,"August 23, 2018",3,20
+First and Last,Docu Series,"September 7, 2018",1,6
+Boca Juniors Confidential,Docu Series,"September 14, 2018",1,4
+Salt Fat Acid Heat,Travel Documentary,"October 11, 2018",4,unknown
+FightWorld,Travel Documentary,"October 12, 2018",1,5
+Terrorism Close Calls,Docu Series,"October 26, 2018",1,10
+Medal of Honor,Docu Series,"November 9, 2018",1,8
+Vai Anitta,Docu Series,"November 16, 2018",1,6
+Inside the Real Narcos,Docu Series,"December 14, 2018",1,3
+The Innocent Man,True Crime,"December 14, 2018",6,unknown
+7 Days Out,Docu Series,"December 21, 2018",1,6
+Murder Mountain,True Crime,"December 28, 2018",1,6
+Trigger Warning with Killer Mike,Docu Series,"January 18, 2019",1,6
+Conversations with a Killer: The Ted Bundy Tapes,True Crime,"January 24, 2019",4,unknown
+Examination of Conscience,True Crime,"January 25, 2019",1,3
+Larry Charles' Dangerous World of Comedy,Docu Series,"February 15, 2019",1,4
+Losers,Sport,"March 1, 2019",1,8
+Cricket Fever: Mumbai Indians,Sport,"March 1, 2019",1,8
+The Disappearance of Madeleine McCann,True Crime,"March 15, 2019",8,unknown
+Our Planet,Nature Documentary,"April 5, 2019",8,unknown
+Street Food: Asia,Culinary Art,"April 26, 2019",1,9
+1994,Docu Series,"May 17, 2019",5,unknown
+Killer Ratings,Docu Series,"May 31, 2019",1,7
+The Alcàsser Murders,True Crime,"June 14, 2019",1,5
+Exhibit A,True Crime,"June 28, 2019",1,4
+The Last Czars,Docu Series,"July 3, 2019",1,6
+The Family,Docu Series,"August 9, 2019",5,unknown
+Happy Jail,Docu Series,"August 14, 2019",5,unknown
+Diagnosis,Docu Series,"August 16, 2019",1,7
+"The Mind, Explained",Docu Series,"September 12, 2019",5,unknown
+Inside Bill's Brain: Decoding Bill Gates,Docu Series,"September 20, 2019",3,unknown
+Living Undocumented,Docu Series,"October 2, 2019",1,6
+Unnatural Selection,Docu Series,"October 18, 2019",4,unknown
+"Breakfast, Lunch & Dinner",Docu Series,"October 23, 2019",1,4
+The Devil Next Door,Docu Series,"November 4, 2019",5,unknown
+Maradona in Mexico,Sport,"November 13, 2019",7,unknown
+Who Killed Little Gregory?,Docu Series,"November 20, 2019",5,unknown
+Narcoworld: Dope Stories,Docu Series,"November 22, 2019",1,4
+Broken,Docu Series,"November 27, 2019",1,4
+The Movies That Made Us,Docu Series,"November 29, 2019",1,4
+The Confession Killer,True Crime,"December 6, 2019",5,unknown
+Don't F**k with Cats: Hunting an Internet Killer,True Crime,"December 18, 2019",3,unknown
+Kevin Hart: Don't F**k This Up,Docu Series,"December 27, 2019",1,6
+"Sex, Explained",Docu Series,"January 2, 2020",6,unknown
+Cheer,Docu Series,"January 8, 2020",1,6
+Killer Inside: The Mind of Aaron Hernandez,True Crime,"January 15, 2020",3,unknown
+Pandemic: How to Prevent an Outbreak,Docu Series,"January 22, 2020",1,6
+Rise of Empires: Ottoman,Docudrama,"January 24, 2020",1,6
+Night on Earth,Nature Documentary,"January 29, 2020",6,unknown
+The Pharmacist,Docu Series,"February 5, 2020",4,unknown
+The Trials of Gabriel Fernandez,Docu Series,"February 26, 2020",6,unknown
+"Tiger King: Murder, Mayhem and Madness",Docu Series,"March 20, 2020",8,unknown
+How to Fix a Drug Scandal,True Crime,"April 1, 2020",4,unknown
+The Innocence Files,Docu Series,"April 15, 2020",9,unknown
+"Coronavirus, Explained",Docu Series,"April 26, 2020",3,unknown
+Jeffrey Epstein: Filthy Rich,Docu Series,"May 27, 2020",4,unknown
+Title,Genre,Premiere,No_of_Seasons,No_of_Episodes
+Bosch,Detective Fiction,"February 13, 2015",6,60
+Hand of God,Psychological Thriller,"September 4, 2015",2,20
+The Man in the High Castle,Alternative History,"November 20, 2015",4,40
+Mad Dogs,Drama,"January 22, 2016",1,10
+Goliath,Legal Drama,"October 14, 2016",3,24
+Good Girls Revolt,Historical Period Drama,"October 28, 2016",1,10
+Sneaky Pete,Crime Drama,"January 13, 2017",3,30
+Z: The Beginning of Everything,Historical Period Drama,"January 27, 2017",1,10
+Patriot,Crime Drama,"February 24, 2017",2,18
+The Last Tycoon,Historical Period Drama,"July 28, 2017",1,9
+Lore,Anthology Horror,"October 13, 2017",2,12
+Jack Ryan,Political Thriller,"August 31, 2018",2,16
+The Romanoffs,Anthology,"October 12, 2018",1,8
+Homecoming,Psychological Thriller,"November 2, 2018",2,17
+Hanna,Action,"March 29, 2019",2,16
+Too Old to Die Young,Crime Drama,"June 14, 2019",10,unknown
+The Boys,Superhero,"July 26, 2019",2,16
+Carnival Row,Fantasy,"August 30, 2019",1,8
+Hunters,Drama,"February 21, 2020",1,10
+Tales from the Loop,Science Fiction,"April 3, 2020",1,8
+Alex Rider,Spy Thriller,"June 4, 2020",1,8
+Utopia,Drama,"September 25, 2020",1,8
+The Wilds,Young Adult Drama,"December 11, 2020",1,10
+Betas,Comedy,"April 19, 2013",1,11
+Alpha House,Political Satire,"April 19, 2013",2,21
+Gortimer Gibbon's Life on Normal Street,Teen Sitcom Fantasy,"April 19, 2014",2,39
+Annedroids,Science Fiction,"July 25, 2014",4,52
+Transparent,Comedy Drama,"September 26, 2014",5,41
+Mozart in the Jungle,Comedy Drama,"December 23, 2014",4,40
+Just Add Magic,Fantasy,"January 15, 2015",3,51
+Red Oaks,Comedy Drama,"October 10, 2015",3,26
+The Kicks,Teen Sitcom,"August 26, 2016",1,10
+One Mississippi,Comedy Drama,"September 9, 2016",2,12
+Crisis in Six Scenes,Comedy,"September 30, 2016",6,unknown
+I Love Dick,Comedy Drama,"May 12, 2017",1,8
+Comrade Detective,Comedy Drama,"August 4, 2017",1,6
+The Tick,Superhero,"August 25, 2017",2,22
+Sigmund and the Sea Monsters,Fantasy,"October 13, 2017",1,7
+The Marvelous Mrs. Maisel,Comedy Drama,"November 29, 2017",3,26
+Jean-Claude Van Johnson,Comedy Drama,"December 15, 2017",1,6
+The Dangerous Book for Boys,Comedy Drama,"March 30, 2018",1,6
+Forever,Comedy Drama,"September 14, 2018",1,8
+Modern Love,Romantic Comedy Anthology,"October 18, 2019",1,8
+Just Add Magic: Mystery City,Fantasy,"January 17, 2020",1,10
+Upload,Science Fiction,"May 1, 2020",1,10
+Truth Seekers,Comedy Horror,"October 30, 2020",1,8
+Baahubali: The Lost Legends,Action Historical,"April 19, 2017",5,71
+Undone,Comedy Drama,"September 13, 2019",1,8
+Crayon Shin-chan Spin-off,Comedy,"August 3, 2016",4,52
+Blade of the Immortal,Action Historical,"October 10, 2019",1,24
+You Are Wanted,Thriller,"March 12, 2017",2,12
+Deutschland 86,Thriller,"October 19, 2018",1,10
+Beat,Crime Thriller,"November 9, 2018",1,7
+Bibi & Tina,Sitcom,"April 3, 2020",1,10
+Der Beischläfer,Comedy,"May 29, 2020",1,6
+Inside Edge,Sports Drama,"July 10, 2017",2,20
+Laakhon Mein Ek,Drama,"October 13, 2017",2,14
+Pushpavalli,Comedy Drama,"December 15, 2017",2,16
+Shaitaan Haveli,Horror Comedy,"January 5, 2018",1,8
+Breathe,Thriller,"January 26, 2018",1,8
+Chacha Vidhayak Hain Humare,Comedy,"May 18, 2018",1,8
+Mirzapur,Crime Thriller,"November 16, 2018",2,19
+Four More Shots Please!,Romantic Comedy Drama,"January 25, 2019",2,20
+Made in Heaven,Drama,"March 7, 2019",1,9
+Mind the Malhotras,Sitcom,"June 7, 2019",1,9
+The Family Man,Thriller,"September 20, 2019",1,10
+Hostel Daze,Comedy Drama,"December 13, 2019",1,5
+The Forgotten Army,Historical Drama,"January 24, 2020",5,unknown
+Afsos,Comedy Drama,"February 6, 2020",1,8
+Panchayat,Comedy Drama,"April 3, 2020",1,8
+Paatal Lok,Crime Thriller,"May 15, 2020",1,9
+Rasbhari,Comedy Drama,"June 25, 2020",1,8
+Breathe: Into the Shadows,Crime Thriller,"July 10, 2020",1,12
+Bandish Bandits,Musical,"August 4, 2020",1,10
+Tandav,Crime Thriller Action,"January 15, 2021",1,9
+Kamen Rider Amazons,Action Horror,"April 1, 2016",2,26
+Happy Marriage!?,Romance Drama,"June 22, 2016",1,12
+Baby Steps,Sports Drama,"July 22, 2016",1,10
+Businessmen vs Aliens,Science Fiction Comedy,"September 8, 2016",1,10
+Fukuyado Honpo: Kyoto Love Story,Romance Drama,"October 19, 2016",1,12
+Tokyo Girl,Drama,"December 16, 2016",1,11
+Ultraman Orb: The Origin Saga,Action Drama,"December 26, 2016",1,12
+Gaki Rock: The Story of Kindness in Asakusa,Comedy Drama,"April 14, 2017",1,12
+Tokyo Vampire Hotel,Horror Drama,"June 16, 2017",1,9
+Face: Cyber Hanzai Tokusouhan,Mystery Drama,"July 11, 2017",1,10
+Tokyo Alice,Comedy Drama,"August 25, 2017",1,12
+Final Life,Mystery Drama,"September 8, 2017",1,12
+Chase,Mystery Drama,"December 22, 2017",2,12
+Shiro to Kiiro,Romance Drama,"February 28, 2018",1,25
+Konta Teru's Legal Recipes,Cooking Comedy,"March 6, 2018",1,10
+Shonan Junai Gumi,Action Comedy Drama,"February 28, 2020",1,8
+Peep Time,Sitcom,"September 18, 2020",1,8
+Diablo Guardián,Action Drama,"May 4, 2018",2,18
+Un Extraño Enemigo,Political Thriller,"October 2, 2018",1,8
+Pequeñas coincidencias[a],Romantic Comedy,"December 7, 2018",2,20
+El Presidente,Sports Drama,"June 5, 2020",1,8
+Cómo sobrevivir soltero,Comedy,"June 26, 2020",1,10
+Relatos con-fin-a-dos[a],Comedy Drama Anthology,"July 3, 2020",5,unknown
+La Jauría,Mystery Thriller,"July 10, 2020",1,8
+El Candidato,Crime Drama,"July 17, 2020",1,10
+Súbete a mi moto[a],Drama,"October 9, 2020",1,15
+El Cid,Historical Drama,"December 18, 2020",1,5
+3 Caminos,Adventure,"January 22, 2021",1,8
+The Idolmaster KR,Musical Drama,"April 28, 2017",1,24
+Gangstars,Crime Drama,"June 1, 2018",1,12
+Vella Raja,Crime Drama,"December 2, 2018",1,10
+The New Yorker Presents,Documentary,"February 16, 2016",1,11
+Prime Japan,Documentary,"May 15, 2016",1,12
+Invisible Tokyo,Documentary,"July 15, 2016",1,8
+All or Nothing,Sports Documentary,"July 1, 2016",5,40
+Eat the World with Emeril Lagasse,Culinary Art,"September 1, 2016",1,6
+The Grand Tour,Motoring,"November 18, 2016",4,40
+Ishi-chan no Sake Tabi,Cooking Documentary,"February 3, 2017",1,20
+American Playboy: The Hugh Hefner Story,Docudrama,"April 6, 2017",1,10
+Long Strange Trip,Documentary,"June 2, 2017",1,6
+Le Mans: Racing is Everything,Sports Documentary,"June 9, 2017",1,6
+GRAND PRIX Driver,Sports Documentary,"February 9, 2018",1,4
+All or Nothing: The Michigan Wolverines,Sports Documentary,"April 7, 2018",1,8
+All or Nothing: New Zealand All Blacks,Sports Documentary,"June 1, 2018",1,6
+Six Dreams,Sports Documentary,"July 26, 2018",1,6
+Eat. Race. Win.,Sports Documentary,"July 27, 2018",1,6
+Pistorius,Documentary,"August 1, 2018",1,4
+Harmony with A. R. Rahman,Travel Documentary,"August 15, 2018",1,5
+All or Nothing: Manchester City,Sports Documentary,"August 17, 2018",1,8
+The Gymkhana Files,Sports Documentary,"November 16, 2018",1,8
+Inside Jokes,Comedian Documentary,"November 30, 2018",1,6
+"Luis, el sabio del éxito",Sports Documentary,"December 21, 2018",1,2
+Lorena,Docuseries,"February 15, 2019",1,4
+This Giant Beast That is the Global Economy,Docuseries,"February 22, 2019",1,8
+This Is Football,Sports Documentary,"August 2, 2019",1,6
+Free Meek,Docuseries,"August 9, 2019",1,5
+Inside Borussia Dortmund,Sports Documentary,"August 16, 2019",1,4
+Take Us Home: Leeds United,Sports Documentary,"August 16, 2019",2,8
+El Corazón de Sergio Ramos,Sports Documentary,"September 13, 2019",1,8
+"Huesca, más allá de un sueño",Sports Documentary,"October 1, 2019",1,8
+Jestination Unknown,Travel Documentary,"October 18, 2019",1,6
+James May: Our Man in Japan,Travel Documentary,"January 3, 2020",1,6
+All or Nothing: Brazil national football team,Sports Documentary,"January 31, 2020",1,5
+Ted Bundy: Falling for a Killer,Docuseries,"January 31, 2020",1,5
+The Test: A New Era for Australia's Team,Sports Documentary,"March 12, 2020",1,8
+Regular Heroes,Docuseries,"May 8, 2020",1,8
+Futbolistas por el mundo,Sports Documentary,"June 5, 2020",1,4
+True Story,Comedy Docudrama,"June 26, 2020",1,6
+De la vida al plato,Cooking Documentary,"July 24, 2020",1,8
+The Last Narc,Drug Documentary,"July 31, 2020",1,4
+All or Nothing: Tottenham Hotspur,Sports Documentary,"August 31, 2020",1,9
+Fernando,Sports Documentary,"September 25, 2020",1,5
+El Desafío: ETA,Docuseries,"October 30, 2020",1,8
+James May: Oh Cook!,Cooking Show,"November 13, 2020",1,7
