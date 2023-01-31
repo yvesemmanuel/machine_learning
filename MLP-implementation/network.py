@@ -11,10 +11,13 @@ and omits many desirable features.
 
 import random
 import numpy as np
+from typing import List
+from scipy import special
+
 
 class Network(object):
 
-    def __init__(self, sizes):
+    def __init__(self, sizes: List[int], activate_hidden_layer: str):
         """The list ``sizes`` contains the number of neurons in the
         respective layers of the network.  For example, if the list
         was [2, 3, 1] then it would be a three-layer network, with the
@@ -27,14 +30,27 @@ class Network(object):
         ever used in computing the outputs from later layers."""
         self.num_layers = len(sizes)
         self.sizes = sizes
+        self.activate_hidden_layer = self.set_function(activate_hidden_layer)
+
         self.biases = [np.random.randn(y, 1) for y in sizes[1:]]
         self.weights = [np.random.randn(y, x) for x, y in zip(sizes[:-1], sizes[1:])]
+
+    
+    def set_function(self, function_name):
+        if function_name == 'tanh':
+            return tanh
+        elif function_name == 'sigmoid':
+            return sigmoid
+        elif function_name == 'softmax':
+            return softmax
+        elif function_name == 'relu':
+            return relu
 
 
     def feedforward(self, a):
         """Return the output of the network if ``a`` is input."""
         for b, w in zip(self.biases, self.weights):
-            a = sigmoid(np.dot(w, a) + b)
+            a = softmax(np.dot(w, a) + b)
 
         return a
 
@@ -50,6 +66,11 @@ class Network(object):
         tracking progress, but slows things down substantially."""
         n = len(training_data)
         for j in range(epochs):
+            
+            if j < int(epochs*0.2):
+                if j % (epochs*0.1) == 0:
+                    eta *= 0.9
+
             random.shuffle(training_data)
             mini_batches = [training_data[k:k+mini_batch_size] for k in range(0, n, mini_batch_size)]
             for mini_batch in mini_batches:
@@ -90,14 +111,19 @@ class Network(object):
         activations = [x] # list to store all the activations, layer by layer
         zs = [] # list to store all the z vectors, layer by layer
 
-        for b, w in zip(self.biases, self.weights):
+        for i, (b, w) in enumerate(zip(self.biases, self.weights)):
             z = np.dot(w, activation) + b
             zs.append(z)
-            activation = sigmoid(z)
+
+            if (self.num_layers - 1) == i:
+                activation = softmax(z)
+            else:
+                activation = self.activate_hidden_layer(z)
+
             activations.append(activation)
 
         # backward pass
-        delta = self.cost_derivative(activations[-1], y) * sigmoid_prime(zs[-1])
+        delta = self.cost_derivative(activations[-1], y) * softmax(zs[-1], derivative=True)
         nabla_b[-1] = delta
         nabla_w[-1] = np.dot(delta, activations[-2].transpose())
 
@@ -109,7 +135,8 @@ class Network(object):
         # that Python can use negative indices in lists.
         for l in range(2, self.num_layers):
             z = zs[-l]
-            sp = sigmoid_prime(z)
+            sp = self.activate_hidden_layer(z, derivative=True)
+            
             delta = np.dot(self.weights[-l+1].transpose(), delta) * sp
             nabla_b[-l] = delta
             nabla_w[-l] = np.dot(delta, activations[-l-1].transpose())
@@ -117,7 +144,7 @@ class Network(object):
         return nabla_b, nabla_w
 
 
-    def evaluate(self, test_data):
+    def evaluate(self, test_data) -> int:
         """Return the number of test inputs for which the neural
         network outputs the correct result. Note that the neural
         network's output is assumed to be the index of whichever
@@ -125,7 +152,7 @@ class Network(object):
         test_results = [(np.argmax(self.feedforward(x)), y) for (x, y) in test_data]
 
         return sum(int(x == y) for (x, y) in test_results)
-
+        
 
     def score(self, test_data):
         """Return the number of test inputs for which the neural
@@ -144,11 +171,43 @@ class Network(object):
         return output_activations-y
 
 
-#### Miscellaneous functions
-def sigmoid(z):
-    """The sigmoid function."""
+    def mean_squared_error(self, test_data):
+        n_test = len(test_data)
+        correct = self.evaluate(test_data)
+
+        diff = n_test - correct
+        differences_squared = diff ** 2
+        mean_diff = differences_squared.mean()
+        
+        return mean_diff
+
+
+def sigmoid(z, derivative = False):
+    if derivative:
+        return sigmoid(z)*(1-sigmoid(z))
+    
     return 1.0/(1.0+np.exp(-z))
 
-def sigmoid_prime(z):
-    """Derivative of the sigmoid function."""
-    return sigmoid(z)*(1-sigmoid(z))
+
+def tanh(z, derivative = False):
+    if derivative:
+        return 1.0 - tanh(z) ** 2
+
+    return np.tanh(z)
+
+
+def relu(z, derivative = False):
+    if derivative:
+        return np.greater(z, 0.).astype(np.float32)
+    
+    return np.maximum(0, z)
+
+
+def softmax(z, derivative = False):
+    if derivative:
+        exp_element=np.exp(z-z.max())
+        
+        return exp_element/np.sum(exp_element,axis=0)*(1-exp_element/np.sum(exp_element,axis=0))
+
+
+    return special.softmax(z)
