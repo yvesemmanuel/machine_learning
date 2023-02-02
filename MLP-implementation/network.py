@@ -13,11 +13,12 @@ import random
 import numpy as np
 from typing import List
 from scipy import special
+from sklearn.metrics import mean_squared_error
 
 
 class Network(object):
 
-    def __init__(self, sizes: List[int], activate_hidden_layer: str):
+    def __init__(self, sizes: List[int], activate_hidden_layer):
         """The list ``sizes`` contains the number of neurons in the
         respective layers of the network.  For example, if the list
         was [2, 3, 1] then it would be a three-layer network, with the
@@ -67,10 +68,6 @@ class Network(object):
         n = len(training_data)
         for j in range(epochs):
             
-            if j < int(epochs*0.2):
-                if j % (epochs*0.1) == 0:
-                    eta *= 0.9
-
             random.shuffle(training_data)
             mini_batches = [training_data[k:k+mini_batch_size] for k in range(0, n, mini_batch_size)]
             for mini_batch in mini_batches:
@@ -168,18 +165,23 @@ class Network(object):
     def cost_derivative(self, output_activations, y):
         """Return the vector of partial derivatives \partial C_x /
         \partial a for the output activations."""
-        return output_activations-y
+        diff = y - output_activations
+
+        return np.mean(diff ** 2)
 
 
-    def mean_squared_error(self, test_data):
-        n_test = len(test_data)
-        correct = self.evaluate(test_data)
+    def mse_loss(self, test_data, derivative = False):
+        n = len(test_data)
 
-        diff = n_test - correct
-        differences_squared = diff ** 2
-        mean_diff = differences_squared.mean()
-        
-        return mean_diff
+        if derivative:
+            residuls_sum = sum([y - self.feedforward(x) for x, y in test_data])
+
+            return 2 * residuls_sum / n
+
+
+        sqrt_residuals_sum = sum([(y - self.feedforward(x)) ** 2 for x, y in test_data])
+
+        return sum(sqrt_residuals_sum) / n
 
 
 def sigmoid(z, derivative = False):
@@ -193,8 +195,8 @@ def tanh(z, derivative = False):
     if derivative:
         return 1.0 - tanh(z) ** 2
 
-    return np.tanh(z)
-
+    return np.tanh(z * (2/3)) * 1.7159
+    
 
 def relu(z, derivative = False):
     if derivative:
@@ -210,4 +212,4 @@ def softmax(z, derivative = False):
         return exp_element/np.sum(exp_element,axis=0)*(1-exp_element/np.sum(exp_element,axis=0))
 
 
-    return special.softmax(z)
+    return special.softmax(z,axis=0)
