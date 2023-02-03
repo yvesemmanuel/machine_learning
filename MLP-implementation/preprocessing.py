@@ -8,13 +8,16 @@ def normalize(data):
     X_total = sum(data)
 
     X_mean = X_total / total
-
     X_std = np.std(data)
 
-    data = [np.subtract(x, X_mean) for x in data]
-    data = [np.divide(x, X_std) for x in data]
+    new_data = []
+    for x in data:
+        diff = np.subtract(x, X_mean)
+        new_x = np.divide(diff, X_std)
 
-    return data
+        new_data.append(new_x)
+
+    return new_data
 
 def zscore(data):
     return stats.zscore(data)
