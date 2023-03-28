@@ -1,9 +1,10 @@
+import joblib
+
 from tensorflow import keras
 from tensorflow.keras.callbacks import EarlyStopping
+
+from sklearn.metrics import accuracy_score
 from sklearn.linear_model import LogisticRegression
-
-from keras.models import load_model
-
 import numpy as np
 
 
@@ -17,16 +18,16 @@ class MLP_Ensemble:
         self.batch_size = batch_size
         self.activation = activation
 
-        self.save_path = '../models/'
+        self.base_path = '../models/'
         self.models = []
 
-    def set_models():
+    def set_models(self):
         all_models = list()
 
         for i in range(self.n_members):
-            filename = save_path + str(i + 1) + '.h5'
+            filename = self.base_path + str(i + 1) + '.pkl'
 
-            model = load_model(filename)
+            model = joblib.load(filename)
             all_models.append(model)
 
         self.models = all_models
@@ -68,12 +69,12 @@ class MLP_Ensemble:
                 callbacks=[early_stopping]
             )
 
-            filename = save_path + str(i + 1) + '.h5'
+            filename = self.base_path + str(i + 1) + '.pkl'
 
-            model.save(filename)
+            joblib.dump(model, self.base_path)
 
         self.set_models()
-        print(f'{self.n_members} created at {self.save_path}.')
+        print(f'{self.n_members} created at {self.base_path}.')
 
         self.fit_stacked_model()
 
@@ -125,8 +126,7 @@ class MLP_Ensemble:
 
         return yhat
 
-    def get_score(self, X):
-        yhat = self.stacked_prediction(X_test)
+    def get_score(self, X, y):
+        yhat = self.stacked_prediction(X)
 
-        score = f1_m(y_test/1.0, yhat/1.0)
-        print('Stacked F Score:', score)
+        return accuracy_score(y, yhat)
