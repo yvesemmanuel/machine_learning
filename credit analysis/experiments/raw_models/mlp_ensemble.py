@@ -32,7 +32,7 @@ class MLP_Ensemble:
 
         self.models = all_models
 
-    def fit(self, X, y):
+    def fit(self, X, y, X_val, y_val):
         for i in range(self.n_members):
             model = keras.Sequential([
                 keras.layers.Dense(
@@ -48,7 +48,7 @@ class MLP_Ensemble:
 
             early_stopping = EarlyStopping(
                 monitor='val_loss',
-                patience=20,
+                patience=10,
                 verbose=1,
                 restore_best_weights=True
             )
@@ -66,17 +66,18 @@ class MLP_Ensemble:
                 y,
                 batch_size=self.batch_size,
                 epochs=self.max_iter,
-                callbacks=[early_stopping]
+                callbacks=[early_stopping],
+                validation_data=(X_val, y_val)
             )
 
             filename = self.base_path + str(i + 1) + '.pkl'
 
-            joblib.dump(model, self.base_path)
+            joblib.dump(model, filename)
 
         self.set_models()
         print(f'{self.n_members} created at {self.base_path}.')
 
-        self.fit_stacked_model()
+        self.fit_stacked_model(X,y)
 
     def predict(self, X, y):
         y_pred = [model.predict(X, verbose=0) for model in self.models]
