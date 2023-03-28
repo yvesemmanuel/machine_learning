@@ -66,8 +66,8 @@ class MLP_Ensemble:
                 y,
                 batch_size=self.batch_size,
                 epochs=self.max_iter,
-                callbacks=[early_stopping],
-                validation_data=(X_val, y_val)
+                validation_data=(X_val, y_val),
+                callbacks=[early_stopping]
             )
 
             filename = self.base_path + str(i + 1) + '.pkl'
