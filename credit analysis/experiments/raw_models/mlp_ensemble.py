@@ -1,7 +1,9 @@
 import joblib
 
-from tensorflow import keras
-from tensorflow.keras.callbacks import EarlyStopping
+from keras import Sequential
+from keras.layers import Dense
+from keras.callbacks import EarlyStopping
+from keras.optimizers import SGD, Adam
 
 from sklearn.metrics import accuracy_score
 from sklearn.linear_model import LogisticRegression
@@ -10,13 +12,17 @@ import numpy as np
 
 class MLP_Ensemble:
 
-    def __init__(self, n_members: int = 1, hidden_layer_sizes: int = 1, learning_rate: float = 0.01, max_iter: int = 10E3, batch_size: int = 8, activation: str = 'relu'):
+    def __init__(self, n_members: int = 1, hidden_layer_sizes: int = 1, hidden_layers: int = 1, learning_rate: float = 0.01, max_iter: int = 10E3, batch_size: int = 8, activation: str = 'relu', output_activation: str = 'softmax', optimizer: str = 'SGD', loss_function: str = 'binary_crossentropy'):
         self.n_members = n_members
         self.hidden_layer_sizes = hidden_layer_sizes
         self.learning_rate = learning_rate
         self.max_iter = max_iter
         self.batch_size = batch_size
         self.activation = activation
+        self.output_activation = output_activation
+        self.optimizer = optimizer
+        self.hidden_layers = hidden_layers
+        self.loss_function = loss_function
 
         self.base_path = '../models/'
         self.models = []
@@ -33,31 +39,52 @@ class MLP_Ensemble:
         self.models = all_models
 
     def fit(self, X, y, X_val, y_val):
+        input_dimension = X.shape[1]
+
         for i in range(self.n_members):
-            model = keras.Sequential([
-                keras.layers.Dense(
+
+            model = Sequential()
+
+            model.add(
+                Dense(
+                    input_dim=input_dimension,
                     units=self.hidden_layer_sizes,
                     activation=self.activation
-                ),
-                keras.layers.Dense(
-                    units=self.hidden_layer_sizes,
-                    activation=self.activation
-                ),
-                keras.layers.Dense(units=1, activation='softmax')
-            ])
+                )
+            )
+
+            for _ in range(self.hidden_layers):
+                model.add(
+                    Dense(
+                        units=self.hidden_layer_sizes,
+                        activation=self.activation
+                    )
+                )
+
+
+            model.add(
+                Dense(
+                    units=1,
+                    activation=self.output_activation
+                )
+            )
 
             early_stopping = EarlyStopping(
                 monitor='val_loss',
-                patience=10,
+                patience=20,
                 verbose=1,
-                restore_best_weights=True
+                restore_best_weights=True,
+                min_delta=0.001
             )
 
+            if self.optimizer == 'SGD':
+                optimizer = SGD(learning_rate=self.learning_rate)
+            elif self.optimizer == 'Adam':
+                optimizer = Adam(learning_rate=self.learning_rate)
+
             model.compile(
-                optimizer=keras.optimizers.Adam(
-                    self.learning_rate
-                ),
-                loss=keras.losses.BinaryCrossentropy(),
+                optimizer=optimizer,
+                loss=self.loss_function,
                 metrics=['accuracy']
             )
 
