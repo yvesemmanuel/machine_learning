@@ -10,19 +10,11 @@ from sklearn.linear_model import LogisticRegression
 import numpy as np
 
 
-class MLP_Ensemble:
+class MlpEnsemble:
 
-    def __init__(self, n_members: int = 1, hidden_layer_sizes: int = 1, hidden_layers: int = 1, learning_rate: float = 0.01, max_iter: int = 10E3, batch_size: int = 8, activation: str = 'relu', output_activation: str = 'softmax', optimizer: str = 'SGD', loss_function: str = 'binary_crossentropy'):
-        self.n_members = n_members
-        self.hidden_layer_sizes = hidden_layer_sizes
-        self.learning_rate = learning_rate
-        self.max_iter = max_iter
-        self.batch_size = batch_size
-        self.activation = activation
-        self.output_activation = output_activation
-        self.optimizer = optimizer
-        self.hidden_layers = hidden_layers
-        self.loss_function = loss_function
+    def __init__(self, models_params):
+        self.models_params = models_params
+        self.n_members = len(models_params)
 
         self.base_path = '../models/'
         self.models = []
@@ -38,8 +30,8 @@ class MLP_Ensemble:
 
         self.models = all_models
 
-    def fit(self, X, y, X_val, y_val):
-        input_dimension = X.shape[1]
+    def fit(self, X_train, y_train, X_val, y_val):
+        input_dimension = X_train.shape[1]
 
         for i in range(self.n_members):
 
@@ -48,7 +40,7 @@ class MLP_Ensemble:
             model.add(
                 Dense(
                     input_dim=input_dimension,
-                    units=self.hidden_layer_sizes,
+                    units=self.hidden_layer_units,
                     activation=self.activation
                 )
             )
@@ -56,7 +48,7 @@ class MLP_Ensemble:
             for _ in range(self.hidden_layers):
                 model.add(
                     Dense(
-                        units=self.hidden_layer_sizes,
+                        units=self.hidden_layer_units,
                         activation=self.activation
                     )
                 )
@@ -89,8 +81,8 @@ class MLP_Ensemble:
             )
 
             model.fit(
-                X,
-                y,
+                X_train,
+                y_train,
                 batch_size=self.batch_size,
                 epochs=self.max_iter,
                 validation_data=(X_val, y_val),
@@ -104,7 +96,7 @@ class MLP_Ensemble:
         self.set_models()
         print(f'{self.n_members} created at {self.base_path}.')
 
-        self.fit_stacked_model(X,y)
+        self.fit_stacked_model(X_train, y_train)
 
     def predict(self, X, y):
         y_pred = [model.predict(X, verbose=0) for model in self.models]
