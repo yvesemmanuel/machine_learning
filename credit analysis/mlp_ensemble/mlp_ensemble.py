@@ -1,7 +1,10 @@
 import joblib
 
 from keras import Sequential
+
 from keras.layers import Dense
+from keras.layers import Dropout
+
 from keras.callbacks import EarlyStopping
 from keras.optimizers import SGD, Adam
 
@@ -12,91 +15,107 @@ import numpy as np
 
 class MlpEnsemble:
 
-    def __init__(self, models_params):
+    def __init__(self, models_params, input_dimension):
         self.models_params = models_params
         self.n_members = len(models_params)
+        self.input_dimension = input_dimension
 
-        self.base_path = '../models/'
-        self.models = []
+        self.base_path = './raw_models/'
+        self.models = {}
 
-    def set_models(self):
-        all_models = list()
-
-        for i in range(self.n_members):
-            filename = self.base_path + str(i + 1) + '.pkl'
-
-            model = joblib.load(filename)
-            all_models.append(model)
-
-        self.models = all_models
-
-    def fit(self, X_train, y_train, X_val, y_val):
-        input_dimension = X_train.shape[1]
-
-        for i in range(self.n_members):
-
+    def build_models(self):
+        for i, params in enumerate(self.models_params):
             model = Sequential()
 
             model.add(
                 Dense(
-                    input_dim=input_dimension,
-                    units=self.hidden_layer_units,
-                    activation=self.activation
+                    input_dim=self.input_dimension,
+                    units=params['hidden_layer_units'],
+                    activation=params['activation']
                 )
             )
 
-            for _ in range(self.hidden_layers):
+            for _ in range(params['hidden_layers']):
                 model.add(
                     Dense(
-                        units=self.hidden_layer_units,
-                        activation=self.activation
+                        units=params['hidden_layer_units'],
+                        activation=params['activation']
                     )
                 )
+
+                # model.add(Dropout(params['dropout_rate']))
 
 
             model.add(
                 Dense(
                     units=1,
-                    activation=self.output_activation
+                    activation=params['output_activation']
                 )
             )
 
+            self.models[i] = model
+
+    def train_models(self, X_train, y_train, X_val, y_val):    
+        histories = list()
+
+        for i, params in enumerate(self.models_params):
             early_stopping = EarlyStopping(
                 monitor='val_loss',
                 patience=20,
                 verbose=1,
-                restore_best_weights=True,
-                min_delta=0.001
+                restore_best_weights=True
             )
 
-            if self.optimizer == 'SGD':
-                optimizer = SGD(learning_rate=self.learning_rate)
-            elif self.optimizer == 'Adam':
-                optimizer = Adam(learning_rate=self.learning_rate)
+            if params['optimizer'] == 'SGD':
+                optimizer = SGD(learning_rate=params['learning_rate'])
+            elif params['optimizer'] == 'Adam':
+                optimizer = Adam(learning_rate=params['learning_rate'])
 
-            model.compile(
+            self.models[i].compile(
                 optimizer=optimizer,
-                loss=self.loss_function,
+                loss=params['loss_function'],
                 metrics=['accuracy']
             )
 
-            model.fit(
+            history = self.models[i].fit(
                 X_train,
                 y_train,
-                batch_size=self.batch_size,
-                epochs=self.max_iter,
+                batch_size=params['batch_size'],
+                epochs=params['max_iter'],
                 validation_data=(X_val, y_val),
                 callbacks=[early_stopping]
             )
 
-            filename = self.base_path + str(i + 1) + '.pkl'
+            histories.append(history)
 
-            joblib.dump(model, filename)
+        self.histories = histories
 
-        self.set_models()
-        print(f'{self.n_members} created at {self.base_path}.')
+    def save_models(self):
+        for id in self.models:
+            filename = self.base_path + f'model_{id}.pkl'
 
-        self.fit_stacked_model(X_train, y_train)
+            joblib.dump(self.models[id], filename)
+
+    def fit(self, X_train, y_train, X_val, y_val):
+        self.build_models()
+        self.train_models(X_train, y_train, X_val, y_val)
+        self.save_models()
+        # self.set_models()
+        
+        # print(f'{self.n_members} created at {self.base_path}.')
+
+        # self.fit_stacked_model(X_train, y_train)
+
+    def set_models(self):
+        all_models = list()
+
+        for i in range(self.n_members):
+            filename = self.base_path + f'model_{i}.pkl'
+
+            model = joblib.load(filename)
+            all_models.append(model)
+
+        self.models = all_models
 
     def predict(self, X, y):
         y_pred = [model.predict(X, verbose=0) for model in self.models]
