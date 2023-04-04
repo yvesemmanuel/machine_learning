@@ -21,63 +21,66 @@ class MlpEnsemble:
         self.input_dimension = input_dimension
 
         self.base_path = './raw_models/'
-        self.models = {}
+        self.sub_models = {}
 
-    def build_models(self):
-        for i, params in enumerate(self.models_params):
-            model = Sequential()
+    def build_sub_model(self, params: dict) -> Sequential:
+        model = Sequential()
 
+        model.add(
+            Dense(
+                input_dim=self.input_dimension,
+                units=params['hidden_layer_units'],
+                activation=params['activation']
+            )
+        )
+
+        for _ in range(params['hidden_layers']):
             model.add(
                 Dense(
-                    input_dim=self.input_dimension,
                     units=params['hidden_layer_units'],
                     activation=params['activation']
                 )
             )
 
-            for _ in range(params['hidden_layers']):
-                model.add(
-                    Dense(
-                        units=params['hidden_layer_units'],
-                        activation=params['activation']
-                    )
-                )
+            # model.add(Dropout(params['dropout_rate']))
 
-                # model.add(Dropout(params['dropout_rate']))
-
-
-            model.add(
-                Dense(
-                    units=1,
-                    activation=params['output_activation']
-                )
+        model.add(
+            Dense(
+                units=1,
+                activation=params['output_activation']
             )
+        )
 
-            self.models[i] = model
+        return model
 
-    def train_models(self, X_train, y_train, X_val, y_val):    
+    def build_sub_models(self):
+        build_map = map(self.build_sub_model, self.models_params)
+        self.sub_models = list(build_map)
+
+    def train_sub_models(self, X_train, y_train, X_val, y_val):    
         histories = list()
 
+        early_stopping = EarlyStopping(
+            monitor='val_loss',
+            patience=20,
+            verbose=1,
+            restore_best_weights=True
+        )
+
         for i, params in enumerate(self.models_params):
-            early_stopping = EarlyStopping(
-                monitor='val_loss',
-                patience=20,
-                verbose=1,
-                restore_best_weights=True
-            )
 
             if params['optimizer'] == 'SGD':
                 optimizer = SGD(learning_rate=params['learning_rate'])
-            elif params['optimizer'] == 'Adam':
+            else:
                 optimizer = Adam(learning_rate=params['learning_rate'])
 
-            self.models[i].compile(
+            self.sub_models[i].compile(
                 optimizer=optimizer,
                 loss=params['loss_function'],
                 metrics=['accuracy']
             )
 
-            history = self.models[i].fit(
+            history = self.sub_models[i].fit(
                 X_train,
                 y_train,
                 batch_size=params['batch_size'],
@@ -90,17 +93,16 @@ class MlpEnsemble:
 
         self.histories = histories
 
-    def save_models(self):
-        for id in self.models:
+    def save_sub_models(self):
+        for id in self.sub_models:
             filename = self.base_path + f'model_{id}.pkl'
 
-            joblib.dump(self.models[id], filename)
+            joblib.dump(self.sub_models[id], filename)
 
     def fit(self, X_train, y_train, X_val, y_val):
-        self.build_models()
-        self.train_models(X_train, y_train, X_val, y_val)
-        self.save_models()
-        # self.set_models()
+        self.build_sub_models()
+        self.train_sub_models(X_train, y_train, X_val, y_val)
+        self.save_sub_models()
         
         # print(f'{self.n_members} created at {self.base_path}.')
 
@@ -115,17 +117,17 @@ class MlpEnsemble:
             model = joblib.load(filename)
             all_models.append(model)
 
-        self.models = all_models
+        self.sub_models = all_models
 
     def predict(self, X, y):
-        y_pred = [model.predict(X, verbose=0) for model in self.models]
+        y_pred = [model.predict(X, verbose=0) for model in self.sub_models]
 
         acc = accuracy_score(y, y_pred)
 
         return acc
 
     def predict1(self, X_test):
-        y_preds = np.array([model.predict(X_test) for model in self.models])
+        y_preds = np.array([model.predict(X_test) for model in self.sub_models])
 
         y_ensemble = np.mean(y_preds, axis=0)
 
@@ -136,7 +138,7 @@ class MlpEnsemble:
     def get_stacked_dataset(self, X):
         X_stacked = None
 
-        for model in self.models:
+        for model in self.sub_models:
             yhat = model.predict(X, verbose=0)
 
             if X_stacked is None:
