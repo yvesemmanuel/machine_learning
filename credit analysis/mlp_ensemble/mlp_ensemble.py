@@ -11,6 +11,7 @@ from keras.optimizers import SGD, Adam
 from sklearn.metrics import accuracy_score
 from sklearn.linear_model import LogisticRegression
 import numpy as np
+import datetime
 
 
 class MlpEnsemble:
@@ -57,7 +58,7 @@ class MlpEnsemble:
         build_map = map(self.build_sub_model, self.models_params)
         self.sub_models = list(build_map)
 
-    def train_sub_models(self, X_train, y_train, X_val, y_val):    
+    def train_sub_models(self, X_train, y_train, X_val, y_val):
         histories = list()
 
         early_stopping = EarlyStopping(
@@ -94,21 +95,25 @@ class MlpEnsemble:
         self.histories = histories
 
     def save_sub_models(self):
-        for id in self.sub_models:
-            filename = self.base_path + f'model_{id}.pkl'
+        for id, model in enumerate(self.sub_models):
+            filename = self.base_path + f'sub_model_{id}.pkl'
 
-            joblib.dump(self.sub_models[id], filename)
+            joblib.dump(model, filename)
+
+    def save_model(self):
+        now = datetime.datetime.now()
+        date_string = now.strftime("%Y-%m-%d_%H-%M-%S")
+        filename = self.base_path + f"ensemble_model_{date_string}.pkl"
+
+        joblib.dump(self, filename)
 
     def fit(self, X_train, y_train, X_val, y_val):
         self.build_sub_models()
         self.train_sub_models(X_train, y_train, X_val, y_val)
         self.save_sub_models()
-        
-        # print(f'{self.n_members} created at {self.base_path}.')
+        self.fit_stacked_model(X_train, y_train)
 
-        # self.fit_stacked_model(X_train, y_train)
-
-    def set_models(self):
+    def fit_w_sub_models(self, X_train, y_train):
         all_models = list()
 
         for i in range(self.n_members):
@@ -119,32 +124,15 @@ class MlpEnsemble:
 
         self.sub_models = all_models
 
-    def predict(self, X, y):
-        y_pred = [model.predict(X, verbose=0) for model in self.sub_models]
-
-        acc = accuracy_score(y, y_pred)
-
-        return acc
-
-    def predict1(self, X_test):
-        y_preds = np.array([model.predict(X_test) for model in self.sub_models])
-
-        y_ensemble = np.mean(y_preds, axis=0)
-
-        y_pred = np.argmax(y_ensemble, axis=1)
-
-        return y_pred
+        self.fit_stacked_model(X_train, y_train)
 
     def get_stacked_dataset(self, X):
-        X_stacked = None
+        X_stacked = self.sub_models[0].predict(X, verbose=0)
 
-        for model in self.sub_models:
+        for model in self.sub_models[1:]:
             yhat = model.predict(X, verbose=0)
 
-            if X_stacked is None:
-                X_stacked = yhat
-            else:
-                X_stacked = np.dstack((X_stacked, yhat))
+            X_stacked = np.dstack((X_stacked, yhat))
 
         n, m = X_stacked.shape
 
@@ -171,3 +159,19 @@ class MlpEnsemble:
         yhat = self.stacked_prediction(X)
 
         return accuracy_score(y, yhat)
+
+    def predict(self, X, y):
+        y_pred = [model.predict(X, verbose=0) for model in self.sub_models]
+
+        acc = accuracy_score(y, y_pred)
+
+        return acc
+
+    def predict1(self, X_test):
+        y_preds = np.array([model.predict(X_test) for model in self.sub_models])
+
+        y_ensemble = np.mean(y_preds, axis=0)
+
+        y_pred = np.argmax(y_ensemble, axis=1)
+
+        return y_pred
