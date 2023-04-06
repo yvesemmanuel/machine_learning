@@ -43,7 +43,7 @@ class MlpEnsemble:
                 )
             )
 
-            # model.add(Dropout(params['dropout_rate']))
+            model.add(Dropout(params['dropout_rate']))
 
         model.add(
             Dense(
@@ -159,19 +159,3 @@ class MlpEnsemble:
         yhat = self.stacked_prediction(X)
 
         return accuracy_score(y, yhat)
-
-    def predict(self, X, y):
-        y_pred = [model.predict(X, verbose=0) for model in self.sub_models]
-
-        acc = accuracy_score(y, y_pred)
-
-        return acc
-
-    def predict1(self, X_test):
-        y_preds = np.array([model.predict(X_test) for model in self.sub_models])
-
-        y_ensemble = np.mean(y_preds, axis=0)
-
-        y_pred = np.argmax(y_ensemble, axis=1)
-
-        return y_pred
