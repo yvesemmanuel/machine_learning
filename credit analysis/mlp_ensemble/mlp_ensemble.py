@@ -71,9 +71,9 @@ class MlpEnsemble:
         for i, params in enumerate(self.models_params):
 
             if params['optimizer'] == 'SGD':
-                optimizer = SGD(learning_rate=params['learning_rate'])
+                optimizer = SGD(learning_rate=params['alpha'])
             else:
-                optimizer = Adam(learning_rate=params['learning_rate'])
+                optimizer = Adam(learning_rate=params['alpha'])
 
             self.sub_models[i].compile(
                 optimizer=optimizer,
@@ -134,9 +134,7 @@ class MlpEnsemble:
 
             X_stacked = np.dstack((X_stacked, yhat))
 
-        n, m = X_stacked.shape
-
-        X_stacked = X_stacked.reshape((n, n*m))
+        X_stacked = X_stacked.reshape((X_stacked.shape[0], X_stacked.shape[1]*X_stacked.shape[2]))
 
         return X_stacked
 
@@ -159,3 +157,8 @@ class MlpEnsemble:
         yhat = self.stacked_prediction(X)
 
         return accuracy_score(y, yhat)
+
+    def predict_proba(self, X):
+        X_stacked = self.get_stacked_dataset(X)
+
+        return self.model.predict_proba(X_stacked)
