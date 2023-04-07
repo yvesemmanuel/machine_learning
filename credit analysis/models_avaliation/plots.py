@@ -1,12 +1,8 @@
-import joblib
 import pandas as pd
 
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 
-from yellowbrick.classifier import ROCAUC
-
-from scipy.stats import ks_2samp
 
 def plot_target_vs_score(target, scores, quantiles, lower_limit=None):
   eval_df = pd.DataFrame(zip(target, scores), columns=['TARGET', 'SCORE']).sort_values(by='SCORE')
