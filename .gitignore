@@ -1,5 +1,5 @@
 *.csv
-breast_cancer/data
+breast_cancer/data/BreakHis_v1
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
