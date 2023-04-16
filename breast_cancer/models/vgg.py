@@ -1,28 +1,110 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+
 import tensorflow as tf
-from d2l import tensorflow as d2l
+from tensorflow.keras import layers
+from tensorflow.keras.callbacks import EarlyStopping, ReduceLROnPlateau
 
-def vgg_block(num_convs, num_channels):
-    blk = tf.keras.models.Sequential()
-    for _ in range(num_convs):
-        blk.add(
-            tf.keras.layers.Conv2D(num_channels, kernel_size=3,
-                                   padding='same', activation='relu'))
-    blk.add(tf.keras.layers.MaxPool2D(pool_size=2, strides=2))
-    return blk
+import joblib
 
-class VGG(d2l.Classifier):
-    def __init__(self, arch, lr=0.1, num_classes=10):
-        super().__init__()
-        self.save_hyperparameters()
-        self.net = tf.keras.models.Sequential()
-        for (num_convs, num_channels) in arch:
-            self.net.add(vgg_block(num_convs, num_channels))
+import numpy as np
+
+
+class VGG():
+
+    def __init__(self, img_dimension=224, seed=0) -> None:
+
+        self.base_path = './raw_models/'
+
+        pretrained_vgg16_base = tf.keras.applications.vgg16.VGG16(
+            include_top=False,
+            input_shape=(img_dimension, img_dimension, 3),
+            weights='imagenet',
+            pooling='avg',
+        )
+        pretrained_vgg16_base.trainable = False
+
+        self.model = tf.keras.Sequential([
+            layers.Input(shape=(img_dimension, img_dimension, 3)),
             
-        self.net.add(
-            tf.keras.models.Sequential([
-            tf.keras.layers.Flatten(),
-            tf.keras.layers.Dense(4096, activation='relu'),
-            tf.keras.layers.Dropout(0.5),
-            tf.keras.layers.Dense(4096, activation='relu'),
-            tf.keras.layers.Dropout(0.5),
-            tf.keras.layers.Dense(num_classes)]))
+            layers.RandomBrightness(0.2, seed=seed),
+            layers.RandomFlip(seed=seed),
+            layers.RandomRotation(0.2, seed=seed),
+            
+            layers.Lambda(tf.keras.applications.vgg16.preprocess_input),
+            pretrained_vgg16_base,
+            layers.Dropout(0.5),
+            
+            layers.Dense(256, activation='relu'),
+            layers.Dropout(0.2),
+            layers.Dense(32, activation='relu'),
+            layers.Dense(1, activation='sigmoid')
+        ], name='VGG16')
+
+
+    def fit(
+        self,
+        training_data,
+        validation_data,
+        learning_rate=0.01,
+        patience=5,
+        epochs=100,
+        verbose=0
+    ) -> tf.keras.callbacks.History:
+        
+        self.model.compile(
+            optimizer=tf.keras.optimizers.Adam(learning_rate),
+            loss=tf.keras.losses.BinaryCrossentropy(),
+            metrics=[tf.keras.metrics.AUC(name='roc_auc'), 'binary_accuracy']
+        )
+
+        early_stopping = EarlyStopping(
+            min_delta=1e-4,
+            patience=patience,
+            verbose=verbose,
+            restore_best_weights=True
+        )
+        reduce_lr = ReduceLROnPlateau(factor=0.5, patience=patience, verbose=verbose)
+
+        self.history = self.model.fit(
+            training_data,
+            validation_data=validation_data,
+            epochs=epochs,
+            callbacks=[early_stopping, reduce_lr]
+        )
+        
+    
+    def show_history(self):
+        performance_df = pd.DataFrame(self.history)
+        fig, axes = plt.subplots(ncols=2, figsize=(11, 4))
+
+        for ax, metric in zip(axes.flat, ['Accuracy', 'Loss']):
+            performance_df.filter(like=metric.lower()).plot(ax=ax)
+            ax.set_title(metric, size=14, pad=10)
+            ax.set_xlabel('epoch')
+
+
+    def predict_proba(self, X):
+        X_preprocessed = tf.keras.applications.vgg16.preprocess_input(X)
+
+        return self.model.predict(X_preprocessed)
+
+
+    def predict(self, test_data):
+        results = [(labels, self.model.predict(images, verbose=0).reshape(-1)) for images, labels in test_data.take(-1)]
+
+        labels = np.concatenate([x[0] for x in results])
+        preds = np.concatenate([x[1] for x in results])
+
+        return labels, preds
+
+    
+    def evaluate(self, test_data, verbose=0):
+        
+        return self.model.evaluate(test_data, verbose=verbose)
+
+
+    def save_model(self, model_name: str):
+        filename = self.base_path + f'{model_name}.pkl'
+
+        joblib.dump(self, filename)
