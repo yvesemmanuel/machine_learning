@@ -1,5 +1,7 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
+from sklearn.utils import resample
+
 import tensorflow as tf
 
 
@@ -49,6 +51,22 @@ def get_data(selected_fold:int=2, batch_size=28, seed:int=0):
         train['label'].map(classes),
         random_state=seed
     )
+
+    train_df = pd.concat([pd.Series(X_train, name='filename'), pd.Series(y_train, name='label')], axis=1)
+
+    class_1 = train_df[train_df['label'] == 1]
+    class_0 = train_df[train_df['label'] == 0]
+
+    class_1_downsampled = resample(class_1, replace=False, n_samples=len(class_0), random_state=seed)
+
+    train_downsampled = pd.concat([class_0, class_1_downsampled], axis=0)
+
+    train_downsampled = train_downsampled.sample(frac=1, random_state=seed).reset_index(drop=True)
+
+    X_train_downsampled = train_downsampled['filename']
+    y_train_downsampled = train_downsampled['label']
+
+    X_train, X_valid, y_train, y_valid = train_test_split(X_train_downsampled, y_train_downsampled, random_state=seed)
 
     train_tensor = tf.data.Dataset.from_tensor_slices((X_train, y_train)) \
                     .map(load_image).batch(batch_size)

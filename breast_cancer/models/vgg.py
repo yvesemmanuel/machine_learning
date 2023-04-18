@@ -12,7 +12,7 @@ import numpy as np
 
 class VGG():
 
-    def __init__(self, img_dimension=224, seed=0) -> None:
+    def __init__(self, img_dimension=224, seed=0, activation_function='relu') -> None:
 
         self.base_path = './raw_models/'
 
@@ -35,9 +35,9 @@ class VGG():
             pretrained_vgg16_base,
             layers.Dropout(0.5),
             
-            layers.Dense(256, activation='relu'),
+            layers.Dense(256, activation=activation_function),
             layers.Dropout(0.2),
-            layers.Dense(32, activation='relu'),
+            layers.Dense(32, activation=activation_function),
             layers.Dense(1, activation='sigmoid')
         ], name='VGG16')
 
