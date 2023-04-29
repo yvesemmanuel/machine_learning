@@ -8,6 +8,8 @@ from keras.layers import Dropout
 from keras.callbacks import EarlyStopping
 from keras.optimizers import SGD, Adam
 
+import tensorflow as tf
+
 from sklearn.metrics import accuracy_score
 from sklearn.linear_model import LogisticRegression
 import numpy as np
@@ -16,10 +18,11 @@ import datetime
 
 class MlpEnsemble:
 
-    def __init__(self, models_params, input_dimension):
+    def __init__(self, models_params, input_dimension, output_activation: str = 'sigmoid'):
         self.models_params = models_params
         self.n_members = len(models_params)
         self.input_dimension = input_dimension
+        self.output_activation = output_activation
 
         self.base_path = './raw_models/'
         self.sub_models = {}
@@ -28,11 +31,7 @@ class MlpEnsemble:
         model = Sequential()
 
         model.add(
-            Dense(
-                input_dim=self.input_dimension,
-                units=params['hidden_layer_units'],
-                activation=params['activation']
-            )
+            tf.keras.Input(shape=self.input_dimension)
         )
 
         for _ in range(params['hidden_layers']):
@@ -43,12 +42,12 @@ class MlpEnsemble:
                 )
             )
 
-            model.add(Dropout(params['dropout_rate']))
+        model.add(Dropout(params['dropout_rate']))
 
         model.add(
             Dense(
                 units=1,
-                activation=params['output_activation']
+                activation=self.output_activation
             )
         )
 
